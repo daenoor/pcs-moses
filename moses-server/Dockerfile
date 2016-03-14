@@ -17,4 +17,4 @@ VOLUME ["${MOSES_MODEL_DIR}", "${MOSES_CONFIG_DIR}", "${MOSES_LOG_DIR}"]
 
 WORKDIR ${MOSES_HOME}
 
-ENTRYPOINT ['start.sh']
+ENTRYPOINT ["sh", "start.sh"]
