@@ -48,12 +48,7 @@ if [ -z "${MGIZA_CPUS}" ]; then
 	MGIZA_CPUS=2
 fi
 
-~/mosesdecoder/scripts/training/train-model.perl -root-dir train \
- --parallel -mgiza -mgiza-cpus ${MGIZA_CPUS} \
- -corpus ${MOSES_MODEL_DIR}/$NAME.clean \
- -f ${SOURCE_LANG} -e ${TARGET_LANG} -alignment grow-diag-final-and -reordering msd-bidirectional-fe \ 
- -lm 0:3:${MOSES_MODEL_DIR}/lm/${NAME}.blm.${TARGET_LANG}:8 \
- -external-bin-dir ${MOSES_HOME}/train-tools  > training.out
+${MOSES_DIR}/scripts/training/train-model.perl -root-dir train --parallel -mgiza -mgiza-cpus ${MGIZA_CPUS} -corpus ${MOSES_MODEL_DIR}/$NAME.clean -f ${SOURCE_LANG} -e ${TARGET_LANG} -alignment grow-diag-final-and -reordering msd-bidirectional-fe -lm 0:3:${MOSES_MODEL_DIR}/lm/${NAME}.blm.${TARGET_LANG}:8 -external-bin-dir ${MOSES_HOME}/train-tools  > training.out
 
  check_result
 

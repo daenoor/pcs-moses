@@ -49,7 +49,7 @@ ${MOSES_HOME}/irstlm/bin/build-lm.sh -i "${NAME}.sb.${TARGET_LANG}" -t ./tmp -p 
 check_result
 
 echo "##### COMPILE LM #####"
-${MOSES_HOME}/irstlm/bin/compile-lm --text yes "${NAME}.lm.${TARGET_LANG}.gz" "${NAME}.arpa.${TARGET_LANG}"
+${MOSES_HOME}/irstlm/bin/compile-lm --text=yes "${NAME}.lm.${TARGET_LANG}.gz" "${NAME}.arpa.${TARGET_LANG}"
 check_result
 
 echo "##### BUILD BINARY LM #####"

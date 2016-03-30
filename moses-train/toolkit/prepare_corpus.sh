@@ -43,10 +43,10 @@ echo "##### TRUECASING CORPUS ######"
 ${MOSES_DIR}/scripts/recaser/train-truecaser.perl --model "temp/truecase-model.${TARGET_LANG}" --corpus "temp/${NAME}.tok.${TARGET_LANG}"
 ${MOSES_DIR}/scripts/recaser/train-truecaser.perl --model "temp/truecase-model.${SOURCE_LANG}" --corpus "temp/${NAME}.tok.${SOURCE_LANG}"
 
-${MOSES_DIR}/scripts/recaser/truecase.perl --model "temp/truecase-model.${TARGET_LANG}" > "temp/${NAME}.true.${TARGET_LANG}"
-${MOSES_DIR}/scripts/recaser/truecase.perl --model "temp/truecase-model.${SOURCE_LANG}" > "temp/${NAME}.true.${SOURCE_LANG}"
+${MOSES_DIR}/scripts/recaser/truecase.perl --model "temp/truecase-model.${TARGET_LANG}" < "temp/${NAME}.tok.${TARGET_LANG}" > "temp/${NAME}.true.${TARGET_LANG}"
+${MOSES_DIR}/scripts/recaser/truecase.perl --model "temp/truecase-model.${SOURCE_LANG}" < "temp/${NAME}.tok.${SOURCE_LANG}" > "temp/${NAME}.true.${SOURCE_LANG}"
 
 echo "##### CLEANING CORPUS #####"
-${MOSES_DIR}/scripts/training/clean-corpus-n.perl "temp/${NAME}.true" ${SOURCE_LANG} ${TARGET_LANG} "${NAME}.clean" 1 80
+${MOSES_DIR}/scripts/training/clean-corpus-n.perl "temp/${NAME}.true" ${SOURCE_LANG} ${TARGET_LANG} "${NAME}.clean" 1 60
 
 cd -
