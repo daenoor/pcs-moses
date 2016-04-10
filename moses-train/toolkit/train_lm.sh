@@ -53,7 +53,7 @@ ${MOSES_HOME}/irstlm/bin/compile-lm --text=yes "${NAME}.lm.${TARGET_LANG}.gz" "$
 check_result
 
 echo "##### BUILD BINARY LM #####"
-${MOSES_DIR}/bin/build_binary "${NAME}.arpa.${TARGET_LANG}" "${NAME}.blm.${TARGET_LANG}"
+${MOSES_DIR}/bin/build_binary -i "${NAME}.arpa.${TARGET_LANG}" "${NAME}.blm.${TARGET_LANG}"
 check_result
 
 cd -
