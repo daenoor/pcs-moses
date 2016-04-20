@@ -1,4 +1,4 @@
-FROM moses-base:latest
+FROM docker.privaclouds.com/moses-base:latest
 
 ENV MOSES_HOME=/home/moses
 

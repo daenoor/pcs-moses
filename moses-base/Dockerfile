@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 
 MAINTAINER Andrey Yaroshenko <da3n00r@gmail.com>
+MAINTAINER Alex Panshin <deadyaga@gmail.com>
 
 # Prepare system
 RUN apt-get update && apt-get install -y \

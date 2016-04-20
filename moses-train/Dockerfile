@@ -1,7 +1,7 @@
-FROM docker.ayaroshenko.me/moses-base:latest
+FROM docker.privaclouds.com/moses-base:latest
 
 ENV MOSES_HOME=/home/moses \
-	MGIZA_CPUS=2 \
+	MGIZA_CPUS=8 \
 	PYTHONUNBUFFERED=0
 
 ENV	MOSES_DIR="${MOSES_HOME}/mosesdecoder" \
